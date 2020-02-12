@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "description": "Build a Blockchain with Typescript",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "tsc"
+  }
 }

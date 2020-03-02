@@ -68,14 +68,14 @@ const getHashforBlock = (aBlock: Block): string =>
     aBlock.timestamp,
     aBlock.data
   );
-const isBlockVaild = (candidateBlcok: Block, previousBlock: Block): boolean => {
-  if (!Block.validateStructure(candidateBlcok)) {
+const isBlockVaild = (candidateBlock: Block, previousBlock: Block): boolean => {
+  if (!Block.validateStructure(candidateBlock)) {
     return false;
-  } else if (previousBlock.index + 1 !== candidateBlcok.index) {
+  } else if (previousBlock.index + 1 !== candidateBlock.index) {
     return false;
-  } else if (previousBlock.hash !== candidateBlcok.previousHash) {
+  } else if (previousBlock.hash !== candidateBlock.previousHash) {
     return false;
-  } else if (getHashforBlock(candidateBlcok) !== candidateBlcok.hash) {
+  } else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
     return false;
   } else {
     return true;

@@ -31,17 +31,17 @@ const createNewBlock = (data) => {
     return newBlock;
 };
 const getHashforBlock = (aBlock) => Block.cacluateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
-const isBlockVaild = (candidateBlcok, previousBlock) => {
-    if (!Block.validateStructure(candidateBlcok)) {
+const isBlockVaild = (candidateBlock, previousBlock) => {
+    if (!Block.validateStructure(candidateBlock)) {
         return false;
     }
-    else if (previousBlock.index + 1 !== candidateBlcok.index) {
+    else if (previousBlock.index + 1 !== candidateBlock.index) {
         return false;
     }
-    else if (previousBlock.hash !== candidateBlcok.previousHash) {
+    else if (previousBlock.hash !== candidateBlock.previousHash) {
         return false;
     }
-    else if (getHashforBlock(candidateBlcok) !== candidateBlcok.hash) {
+    else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
         return false;
     }
     else {

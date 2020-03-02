@@ -1,21 +1,21 @@
-class Human {
-  // public or private
-  public name: string;
-  public age: number;
-  public gender: string;
-  constructor(name: string, age: number, gender: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string;
+  public data: string;
+  public timestamp: number;
+  constructor(index, hash, previousHash, data, timestamp) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
   }
 }
 
-const momo = new Human("momo", 33, "male");
+const genesisBlock: Block = new Block(0, "1241240adfasdf", "", "HELLO", 123456);
 
-const sayHi = (person: Human): string => {
-  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}`;
-};
+let blockChain: [Block] = [genesisBlock];
 
-console.log(sayHi(momo)); // using not interface but class
-
+console.log(blockChain);
 export {}; //bug fix
